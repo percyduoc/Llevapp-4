@@ -1,0 +1,89 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  >
+
+  
+  <ion-grid class="glass-content">
+    
+    <ion-row> 
+      <ion-col id="col1" sizeLg="12" sizeMD="12" sizeXs="12" >
+        
+       
+        
+      </ion-col>
+      <ion-col sizeLg="12" sizeMD="12" sizeXs="12" >
+        <div id="div-fondo">
+          <div>
+            <ion-input autocomplete="on" class="center-content" label="Usuario" label-placement="floating" fill="solid" placeholder="ingrese correo electronico " [(ngModel)]="userLoginModal.correo"></ion-input>
+            <ion-input class="center-content" label="Contraseña" type="password" label-placement="floating" fill="solid" placeholder="Ingrese contraseña" [(ngModel)]="userLoginModal.password"></ion-input>
+          </div>
+          <div>
+            <!--
+              Navigación con una función.
+            -->
+            <ion-button class="botoninicio" id="butoninicio"  shape="round" color="success" (click)="userLogin(userLoginModal)">Inicio </ion-button>
+            <ion-alert
+            [isOpen]="isAlertOpen"
+            header="Mal credenciales"
+            subHeader="mal credenciales"
+            message="falla en las credenciales"
+            [buttons]="alertButtons"
+            (didDismiss)="setOpen(false)"
+          ></ion-alert>
+          </div>
+          <div>
+         
+            <ion-button class="botoninicio" id="butoninicio" color="secondary" shape="round" (click)="registrar() " >Registrar </ion-button>
+          </div>
+          <div>
+            <!--
+              Navegación via HTML.
+            -->
+            <ion-button class="botoninicio" id="butoninicio" shape="round" color="danger"  [routerLink]="['/home']">Olvido la contraseña</ion-button>
+           
+
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div class="card car1">
+      <img src="../../assets/img/autogif.gif" alt="">
+    </div>
+    <div class="card car2">
+      <img src="../../assets/img/logoduoc.png" alt="">
+    </div>
+
+
+  </ion-grid>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>

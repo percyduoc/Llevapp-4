@@ -1,0 +1,73 @@
+
+<ion-content >
+  <ion-grid class="glass-content" >
+    <ion-row>
+      <div id="div-fondo" >
+        <div>
+          <div class="nuevo">
+            <form >
+              <div class="encuesta">
+
+                <ion-input type="text" id="nombre" name="nombre" required >nombre </ion-input>
+                <br>
+              </div>
+              <div class="encuesta">
+  
+                <ion-input type="text" id="last_name" name="last_name" required >last_name </ion-input>
+                <br>
+              </div>
+              <div class="encuesta">
+
+                <ion-input type="text" id="correo" name="correo" required >ingrese correo </ion-input>
+                <br>
+              </div>
+              <div class="encuesta">
+
+                <ion-input type="date" id="birthday" name="birthday" required >birthday </ion-input>
+                <br>
+              </div>
+              <div class="encuesta">
+
+                <ion-input type="text" id="type" name="type" required >
+                  <ion-select placeholder="tipo de usuario">
+                    <div slot="label">Tipo de usuario<ion-text color="danger">(Requerido)</ion-text></div>
+                    <ion-select-option value="Pasajero">Pasajero</ion-select-option>
+                    <ion-select-option value="Conductor">Conductor</ion-select-option>
+
+                  </ion-select>
+                </ion-input>
+                <br>
+              </div>
+              <div class="encuesta">
+
+                <ion-input type="username" id="username" name="username" required >username </ion-input>
+                <br>
+              </div>
+              <div class="encuesta">
+
+                <ion-input type="password" id="password" name="password" required >password </ion-input>
+                <br>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+        <div>
+          <!--
+            Navigación con una función.
+          -->
+          <ion-button expand="block" color="dark" (click)="volverinicio()"  >
+            volver inicio
+          </ion-button>
+          <ion-button expand="block" color="dark" >
+            Agregar Viaje
+          </ion-button>
+          <ion-button expand="block" color="dark" >
+            sin funcipon
+          </ion-button>
+     
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

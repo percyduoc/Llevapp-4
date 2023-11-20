@@ -1,0 +1,21 @@
+
+ion-content{
+    background: rgb(205,213,17);
+    background: linear-gradient(90deg, rgba(205,213,17,1) 55%, rgba(5,8,189,1) 100%, rgba(2,5,78,1) 100%);
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    height: 30vh; 
+    border-radius: 1rem;
+    
+    
+}
+ion-list{
+    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+}
+ion-header {
+
+    background-size: 0ch;
+    }
