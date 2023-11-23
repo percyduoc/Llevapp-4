@@ -40,11 +40,7 @@ export class IngresoviajePage implements OnInit {
     this.router.navigate(['/alumno']);
   }
 
-  modificarViaje(viajeid: string): void {
-    this.viajesService.modificarViaje(viajeid);
-
-  }
-           
+   
 
   agregarUsuario() {
     this.viajesService.postAddViajes(this.nuevoViaje).subscribe(
