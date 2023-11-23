@@ -32,8 +32,8 @@
             <ion-label>Metodo Pago</ion-label>
             <ion-label slot="end" >{{viaje.metodopago}}</ion-label>
           </ion-item>
-          <ion-button  color="light" expand="block" shape="round">
-            Agregar Viaje
+          <ion-button (click)="modificarViaje(viaje.id, nuevoIdConductor)" color="light" expand="block" shape="round">
+            Agregar Pasajero
           </ion-button>
         </ion-list>
       </ion-card-content>

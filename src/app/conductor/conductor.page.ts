@@ -18,6 +18,7 @@ export class ConductorPage implements OnInit {
 
   constructor(private router: Router) {
     this.conductorInfoReceived = this.router.getCurrentNavigation()?.extras.state?.['user'];
+    console.log(this.conductorInfoReceived);
    }
 
   ngOnInit() {

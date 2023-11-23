@@ -15,9 +15,10 @@ import { firstValueFrom } from 'rxjs';
 })
 export class ViajeconductorPage implements OnInit {
   listViaje: any;
+  nuevoIdConductor: string = ''; 
 
   constructor(private router: Router,private viaje: ViajesService) { }
-
+  
   async ngOnInit() {
     this.listViaje = await firstValueFrom(this.viaje.getViajes());
     console.log("lista usuario", this.listViaje)
@@ -25,6 +26,14 @@ export class ViajeconductorPage implements OnInit {
   volverinicio(){
     this.router.navigate(['/conductor']);
   }
- 
-
+  modificarViaje(viajeid: string, nuevoIdConductor: string): void{
+    this.viaje.modificarViaje(viajeid, this.nuevoIdConductor)
+      .subscribe(response => {
+        // Manejar la respuesta, si es necesario
+        console.log('Viaje modificado:',nuevoIdConductor, response);
+      }, error => {
+        // Manejar el error, si ocurre
+        console.error('Error al modificar el viaje:', error);
+      });
+  }
 }

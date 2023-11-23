@@ -54,23 +54,22 @@ export class ViajesService {
     return this.http.get<any>(url, { headers, params });
   }
 
-  modificarViaje(viajeid: string): Observable<any> {
+  modificarViaje(viajeid: string, nuevoIdConductor: string): Observable<any> {
     const url = "https://rpxrcdcsnkzjlihiydjl.supabase.co/rest/v1/Viajes"
     const headers = new HttpHeaders({
-
       'apikey': environment.supabaseKey,
       'Authorization': `Bearer ${environment.supabaseKey}`,
       'Content-Type': 'application/json' // Specify content type for PATCH request
     });
-
+  
     const body = {
-      asistio: true
+      id_conductor: nuevoIdConductor
     };
-
+  
     const params = {
       id: `eq.${viajeid}`
     };
-
+  
     return this.http.patch<any>(url, body, { headers, params });
   }
 
