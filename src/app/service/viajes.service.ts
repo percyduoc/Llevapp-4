@@ -54,7 +54,7 @@ export class ViajesService {
     return this.http.get<any>(url, { headers, params });
   }
 
-  modificarViaje(viajeid: string, nuevoIdConductor: string): Observable<any> {
+  modificarViaje(viajeid: string, nuevoIdConductor: number): Observable<any> {
     const url = "https://rpxrcdcsnkzjlihiydjl.supabase.co/rest/v1/Viajes"
     const headers = new HttpHeaders({
       'apikey': environment.supabaseKey,

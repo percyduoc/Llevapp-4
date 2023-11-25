@@ -15,7 +15,7 @@ import { firstValueFrom } from 'rxjs';
 })
 export class ViajeconductorPage implements OnInit {
   listViaje: any;
-  nuevoIdConductor: string = ''; 
+  nuevoIdConductor!: number  
 
   constructor(private router: Router,private viaje: ViajesService) { }
   
@@ -26,7 +26,7 @@ export class ViajeconductorPage implements OnInit {
   volverinicio(){
     this.router.navigate(['/conductor']);
   }
-  modificarViaje(viajeid: string, nuevoIdConductor: string): void{
+  modificarViaje(viajeid: string, nuevoIdConductor: number): void{
     this.viaje.modificarViaje(viajeid, this.nuevoIdConductor)
       .subscribe(response => {
         // Manejar la respuesta, si es necesario
