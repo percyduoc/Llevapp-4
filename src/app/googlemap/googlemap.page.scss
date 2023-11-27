@@ -5,10 +5,15 @@ capacitor-google-map {
   }
   ion-content {
     --background: none;
+    --ion-background-color: none;
   }
   ion-header{
     --background: rgb(226, 206, 206)  ;
   }
-  .md body {
+  body {
     --ion-background-color: none;
+}
+.selected{
+  --background: none;
+  --ion-background-color: none;
 }
