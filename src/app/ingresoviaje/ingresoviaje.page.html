@@ -19,15 +19,15 @@
             <div class="nuevo">
               <form >
                 <div class="encuesta">
-                  <ion-input type="text" id="origen" name="origen" label="origen"  label-placement="floating" fill="solid" placeholder="origen" [(ngModel)]="nuevoViaje.origen" required > </ion-input>
+                  <ion-input type="text" id="origen" name="origen" label="motivo"  label-placement="floating" fill="solid" placeholder="motivo" [(ngModel)]="nuevoViaje.origen" required > </ion-input>
                   <br>
                 </div>
                 <div class="encuesta">
-                  <ion-input type="text" id="metodopago" name="metodopago" label="metodopago" label-placement="floating" fill="solid" placeholder="metodo de pago" [(ngModel)]="nuevoViaje.metodopago" required > </ion-input>
+                  <ion-input type="date" id="metodopago" name="metodopago" label="dia de reserva " label-placement="floating" fill="solid" placeholder="dia de la reserva " [(ngModel)]="nuevoViaje.metodopago" required > </ion-input>
                   <br>
                 </div>
                 <div class="encuesta">
-                  <ion-input type="text" id="destino" name="destino" label="Destino" label-placement="floating" fill="solid" placeholder="destino" [(ngModel)]="nuevoViaje.destino" required > </ion-input>
+                  <ion-input type="text" id="destino" name="destino" label="auto" label-placement="floating" fill="solid" placeholder="auto" [(ngModel)]="nuevoViaje.destino" required > </ion-input>
                   <br>
                 </div>
               </form>
@@ -41,7 +41,7 @@
               volver inicio
             </ion-button>
             <ion-button expand="block" color="dark" (click)="agregarUsuario()">
-              Agregar Viaje
+              Agregar hora de registro
             </ion-button>
          
        

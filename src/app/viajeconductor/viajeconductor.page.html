@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Viaje Conductor
+     Mecanico
     </ion-title>
     <ion-button (click)="volverinicio()"  color="light"  shape="round">
       Volver inicio
@@ -17,27 +17,27 @@
       <ion-card-content >
         <ion-list lines="none">
           <ion-item >
-            <ion-label>Id</ion-label>
+            <ion-label>Hora de registro</ion-label>
             <ion-label slot="end">{{viaje.id}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Destino</ion-label>
+            <ion-label>tipo de auto</ion-label>
             <ion-label slot="end">{{viaje.destino}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Origen</ion-label>
+            <ion-label>Motivo de viaje</ion-label>
             <ion-label slot="end">{{viaje.origen}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Metodo Pago</ion-label>
+            <ion-label>dia de hora</ion-label>
             <ion-label slot="end" >{{viaje.metodopago}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Conductor asignado </ion-label>
+            <ion-label>mecanico asignado </ion-label>
             <ion-label slot="end" >{{viaje.id_conductor}}</ion-label>
           </ion-item>
           <ion-button (click)="modificarViaje(viaje.id)" color="light" expand="block" shape="round">
-            Agregar Pasajero
+            Agregar cita mecanica
           </ion-button>
         </ion-list>
       </ion-card-content>
