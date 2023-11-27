@@ -5,8 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ViajesService } from '../service/viajes.service';
 import { firstValueFrom } from 'rxjs';
-
-
+import { Geolocation } from '@capacitor/geolocation';
 @Component({
   selector: 'app-ingresoviaje',
   templateUrl: './ingresoviaje.page.html',
@@ -28,7 +27,13 @@ export class IngresoviajePage implements OnInit {
   
   
 
-  constructor(private router: Router, private viajesService: ViajesService) { }
+  constructor(
+    private router: Router, 
+    private viajesService: ViajesService,
+    public geolocation: Geolocation
+    ) {
+      
+     }
 
   async ngOnInit() {
     this.listViaje = await firstValueFrom(this.viajesService.getViajes());
@@ -57,5 +62,11 @@ export class IngresoviajePage implements OnInit {
     );
   }
 
-
+  getGeolocation() {
+    const printCurrentPosition = async () => {
+      const coordinates = await Geolocation.getCurrentPosition();
+    
+      console.log('Current position:', coordinates);
+    };
+  }
 }
