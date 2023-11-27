@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ViajesService } from '../service/viajes.service';
 import { firstValueFrom } from 'rxjs';
+import { Preferences } from '@capacitor/preferences';
+
 
 @Component({
   selector: 'app-viajeconductor',
@@ -15,23 +17,31 @@ import { firstValueFrom } from 'rxjs';
 })
 export class ViajeconductorPage implements OnInit {
   listViaje: any;
-  nuevoIdConductor: string = ''; 
+  nuevoIdConductor!: number  
 
   constructor(private router: Router,private viaje: ViajesService) { }
   
   async ngOnInit() {
     this.listViaje = await firstValueFrom(this.viaje.getViajes());
-    console.log("lista usuario", this.listViaje)
+    console.log("lista usuario", this.listViaje);
+    // 
+
+  
+    const userid = await Preferences.get({ key: 'userid' });
+    console.log(userid.value?.toString());
+    this.nuevoIdConductor = parseInt(userid.value?.toString() || '0');
+
+      //OBTIENE NUMBER
   }
   volverinicio(){
     this.router.navigate(['/conductor']);
   }
-  modificarViaje(viajeid: string, nuevoIdConductor: string): void{
+  modificarViaje(viajeid: string): void{
     this.viaje.modificarViaje(viajeid, this.nuevoIdConductor)
-      .subscribe(response => {
+      .subscribe((response: any) => {
         // Manejar la respuesta, si es necesario
-        console.log('Viaje modificado:',nuevoIdConductor, response);
-      }, error => {
+        console.log('Viaje modificado:',this.nuevoIdConductor, response);
+      }, (error: any) => {
         // Manejar el error, si ocurre
         console.error('Error al modificar el viaje:', error);
       });

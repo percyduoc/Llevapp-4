@@ -8,6 +8,7 @@ import { firstValueFrom } from 'rxjs';
 import { UsuarioService } from '../service/usuario.service';
 import { Preferences } from '@capacitor/preferences';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -17,6 +18,7 @@ import { Preferences } from '@capacitor/preferences';
 export class LoginPage implements OnInit {
   isAlertOpen = false;
   alertButtons = ['Reintentar'];
+
   listUser: any;
   usuario  :any ;
 
@@ -36,18 +38,21 @@ export class LoginPage implements OnInit {
 
     this.listUser = await firstValueFrom(this.usuarioService.getusuarios());
     console.log("lista usuario", this.listUser)
+  
+    
+    
     
 
 
   }
 
-  async guardarusuario(){
-  const setuserid = async () => {
+  async guardarusuario(id_usuario: number){
+    console.log(id_usuario)
     await Preferences.set({
       key: 'userid',
-      value: 'this.usuario',
+      value: id_usuario.toString(), 
     });
-  };
+
 }
 
 
@@ -55,7 +60,6 @@ export class LoginPage implements OnInit {
 
     const checkuserid = async () => {
       const { value } = await Preferences.get({ key: 'userid' });
-    
       console.log(`Hello ${value}!`);
       return value;
     };
@@ -68,21 +72,14 @@ export class LoginPage implements OnInit {
       console.log("lista usuario", this.listUser)
       if((this.listUser[i].correo == userLoginInfo.correo) && (this.listUser[i].password == userLoginInfo.password)){
         console.log('User Loged...', this.userLoginModal.correo, this.userLoginModal.correo);
+        console.log(this.listUser[i]);
+        this.guardarusuario(this.listUser[i].id_usuario)
+        this.mostrar
         let userInfoSend: NavigationExtras = {
           state: {
             user: this.listUser[i]
           }
         }
-
-        this.usuario = this.listUser[i];
-
-        this.guardarusuario();
-        console.log(this.mostrar());
-
-
-       
-        
-
         if(this.listUser[i].type == 'alumno'){
           this.route.navigate(['/alumno'], userInfoSend);
           return true;
