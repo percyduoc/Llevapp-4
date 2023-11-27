@@ -30,7 +30,7 @@ export class ConductorPage implements OnInit {
     this.router.navigate(['/login']);
   }
   auto(){
-    this.router.navigate(['/auto']);
+    this.router.navigate(['/googlemap']);
   }
   
   viajes(){

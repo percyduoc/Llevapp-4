@@ -6,7 +6,7 @@ ion-content{
     padding: 0;
     background-size: cover;
     background-position: center;
-    height: 30vh; 
+    height: 50vh; 
     border-radius: 1rem;
     
     
@@ -18,3 +18,13 @@ ion-header {
 
     background-size: 0ch;
     }
+.selected{
+    background-color: #234ece;
+    border-radius: 1rem;
+    color: white;
+}
+.red{
+    background-color: #ce2323;
+    border-radius: 1rem;
+   
+}

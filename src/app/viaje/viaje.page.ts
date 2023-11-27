@@ -16,19 +16,21 @@ import { firstValueFrom } from 'rxjs';
 export class ViajePage implements OnInit {
   listViaje: any;
   addViaje: any;
+  showToggle = false;
 
-  constructor(private router : Router, private viaje: ViajesService) { }
+  constructor(private router: Router, private viaje: ViajesService) { }
 
   async ngOnInit() {
     this.listViaje = await firstValueFrom(this.viaje.getViajes());
-    console.log("lista usuario", this.listViaje)
-
+    console.log("lista usuario", this.listViaje);
+ 
   }
-  volverinicio(){
+
+  volverinicio() {
     this.router.navigate(['/alumno']);
   }
 
-  async deleteViaje(viajeId: number){
+  async deleteViaje(viajeId: number) {
     const resultadodelete = await firstValueFrom(this.viaje.deleteViaje(viajeId));
   }
 

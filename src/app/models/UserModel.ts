@@ -1,7 +1,7 @@
 export class UserModel {
 
     constructor(
-        public id: number | undefined,
+        public id_usuario: number | undefined,
         public name: string,
         public last_name: string,
         public correo: string,

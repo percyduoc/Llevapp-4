@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { Router } from '@angular/router';
+import { UserModel } from '../models/UserModel';
 
 
 @Injectable({
@@ -48,6 +49,28 @@ getusuario(usuarioID:number): Observable<any> {
   return this.http.get<any>(url, { headers, params });
 }
 
+postAddUsuario(usuario: UserModel ): Observable<any> {
+  const url = "https://rpxrcdcsnkzjlihiydjl.supabase.co/rest/v1/Usuario"
+  const headers = new HttpHeaders({
+    'apikey': environment.supabaseKey,
+    'Content-Type': 'application/json', // Specify content type for PATCH request
+    'Prefer': 'return=minimal', 
+});
+ 
+
+const body = {
+  name: usuario.name,
+  last_name: usuario.last_name,
+  correo: usuario.correo,
+  birthday: usuario.birthday,
+  type: usuario.type,
+  username: usuario.username,
+  password: usuario.password,
+};
+
+
+  return this.http.post<any>(url, body, { headers, });
+}
 
 
 }

@@ -27,85 +27,85 @@ export class HomePage {
     this.map = undefined;
   }
 
-  ionViewDidEnter() {
-    this.createMap();
-  }
+  // ionViewDidEnter() {
+  //   this.createMap();
+  // }
 
-  async createMap() {
-    this.map = await GoogleMap.create({
-      id: 'my-cool-map',
-      element: this.mapRef.nativeElement,
-      apiKey: environment.mapsKey,
-      config: {
-        center: {
-          lat:-33.05480809571986,
-          lng:-71.42431344541667,
-        },
-        zoom: 8,
-      },
-    });
-    this.addMarkers();
-  }
-  async addPolylines(polylines: Polyline[]) {
-    if (this.map) {
-      const polylineIds = await this.map.addPolylines(polylines);
-      console.log('Polyline IDs:', polylineIds);
-    }
-  }
-  async addMarkers() {
-    const markers: Marker[] = [
-      {
-        coordinate: {
-          lat: -33.033636809494006,
-          lng: -71.53313654919491,
-        },
-        title: 'Origen',
-        snippet: 'This is marker 1',
-      },
-      {
-        coordinate: {
-          lat: -33.05480809571986,
-          lng: -71.42431344541667,
-        },
-        title: 'Destino',
-        snippet: 'This is marker 2',
-      },
-    ];
+  // async createMap() {
+  //   this.map = await GoogleMap.create({
+  //     id: 'my-cool-map',
+  //     element: this.mapRef.nativeElement,
+  //     apiKey: environment.mapsKey,
+  //     config: {
+  //       center: {
+  //         lat:-33.05480809571986,
+  //         lng:-71.42431344541667,
+  //       },
+  //       zoom: 8,
+  //     },
+  //   });
+  //   this.addMarkers();
+  // }
+  // async addPolylines(polylines: Polyline[]) {
+  //   if (this.map) {
+  //     const polylineIds = await this.map.addPolylines(polylines);
+  //     console.log('Polyline IDs:', polylineIds);
+  //   }
+  // }
+  // async addMarkers() {
+  //   const markers: Marker[] = [
+  //     {
+  //       coordinate: {
+  //         lat: -33.033636809494006,
+  //         lng: -71.53313654919491,
+  //       },
+  //       title: 'Origen',
+  //       snippet: 'This is marker 1',
+  //     },
+  //     {
+  //       coordinate: {
+  //         lat: -33.05480809571986,
+  //         lng: -71.42431344541667,
+  //       },
+  //       title: 'Destino',
+  //       snippet: 'This is marker 2',
+  //     },
+  //   ];
     
-    const result = await this.map?.addMarkers(markers);
-    console.log(result);
-    // inicio polilyne
-    const polylines: Polyline[] = [
-      {
-        path: [
-          { lat: -33.033636809494006, lng: -71.53313654919491 },
-          { lat: -33.05480809571986, lng: -71.42431344541667 },
-        ],
-        strokeColor: '#F82E02',
-      },
-    ];
-    console.log(polylines);
-    this.addPolylines(polylines);
+  //   const result = await this.map?.addMarkers(markers);
+  //   console.log(result);
+  //   // inicio polilyne
+  //   const polylines: Polyline[] = [
+  //     {
+  //       path: [
+  //         { lat: -33.033636809494006, lng: -71.53313654919491 },
+  //         { lat: -33.05480809571986, lng: -71.42431344541667 },
+  //       ],
+  //       strokeColor: '#F82E02',
+  //     },
+  //   ];
+  //   console.log(polylines);
+  //   this.addPolylines(polylines);
 
   
-    // fin polilyne
+  //   // fin polilyne
 
 
-     this.map?.setOnMarkerClickListener(async   (marker) =>{
+  //    this.map?.setOnMarkerClickListener(async   (marker) =>{
 
-      const modal = await this.modaCtrl.create({
-        component: ModalPage,
-        componentProps:{
-         marker,
-        },
-        breakpoints: [0, 0.3],
-        initialBreakpoint: 0.3,
-      });
-      modal.present();
+  //     const modal = await this.modaCtrl.create({
+  //       component: ModalPage,
+  //       componentProps:{
+  //        marker,
+  //       },
+  //       breakpoints: [0, 0.3],
+  //       initialBreakpoint: 0.3,
+  //     });
+  //     modal.present();
 
 
-     })
-  }
+  //    })
+  // }
 
   volverinicio(){
     this.router.navigate(['/login']);

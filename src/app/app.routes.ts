@@ -53,11 +53,15 @@ export const routes: Routes = [
   {
     path: 'modal',
     loadComponent: () => import('./modal/modal.page').then( m => m.ModalPage)
-  },  {
+  },
+  {
     path: 'miviaje',
     loadComponent: () => import('./miviaje/miviaje.page').then( m => m.MiviajePage)
   },
-
+  {
+    path: 'googlemap',
+    loadComponent: () => import('./googlemap/googlemap.page').then( m => m.GooglemapPage)
+  },
 
 
 

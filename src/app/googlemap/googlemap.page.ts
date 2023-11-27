@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { GoogleMap, Marker, Polyline } from '@capacitor/google-maps';
 import { environment } from 'src/environments/environment';
-import { async } from '@angular/core/testing';
 import { ModalPage } from '../modal/modal.page';
 @Component({
   selector: 'app-googlemap',
@@ -107,7 +106,7 @@ export class GooglemapPage  {
   }
 
   volverinicio(){
-    this.router.navigate(['/login']);
+    this.router.navigate(['/conductor']);
   }
   
 }

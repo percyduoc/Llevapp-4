@@ -9,3 +9,6 @@ capacitor-google-map {
   ion-header{
     --background: silver  ;
   }
+  .md body {
+    --ion-background-color: none;
+}
