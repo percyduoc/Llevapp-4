@@ -60,7 +60,6 @@ export class LoginPage implements OnInit {
 
     const checkuserid = async () => {
       const { value } = await Preferences.get({ key: 'userid' });
-    
       console.log(`Hello ${value}!`);
       return value;
     };

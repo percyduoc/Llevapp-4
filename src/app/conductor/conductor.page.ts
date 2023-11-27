@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { UserModel } from '../models/UserModel';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-conductor',
   templateUrl: './conductor.page.html',
@@ -19,9 +20,11 @@ export class ConductorPage implements OnInit {
   constructor(private router: Router) {
     this.conductorInfoReceived = this.router.getCurrentNavigation()?.extras.state?.['user'];
     console.log(this.conductorInfoReceived);
+    
    }
 
   ngOnInit() {
+    
   }
   volverinicio(){
     this.router.navigate(['/login']);
