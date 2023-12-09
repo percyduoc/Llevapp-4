@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>apk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <body>
+    <h1>
+      <a href="https://imgbb.com/"><img src="https://i.ibb.co/DtCSVqG/logooff.png" alt="logooff" border="0"></a>        Descarga La Aplicacion Llevapp
+    </h1>
+
+    <!-- Sección para usuarios de PC -->
+    <div id="pc-message">
+        <h2>Estás en un COMPUTADOR.</h2>
+        <p>Escanea el siguiente QR para descargar la APK:</p>
+        <a href="https://ibb.co/dL5PDJD"><img src="https://i.ibb.co/pRLfdrd/Registr-App-1.png" alt="RegistrApp QR" border="0"  style="width: 300px; height: 300px;"></a>
+    </div>
+
+    <!-- Sección para usuarios de dispositivos móviles -->
+    <div id="mobile-message">
+        <h2>Estás en un Dispositivo Móvil.</h2> 
+        <p>Presiona el siguiente botón para descargar la APK:</p>
+        <ion-button class="myButton" onclick="window.open('https://drive.google.com/file/d/1qJYHpddNY4ASS7Z4H95Rmie_FPb5hSgL/view?usp=sharing')">
+          Descargar APK
+        </ion-button>
+
+
+    </div>
+
+    <ion-footer>
+      <ion-toolbar>
+        <ion-title>Copyright &copy; - 2023 - Percy Santibañez- Eduardo Villegas. Todos los derechos reservados. </ion-title>
+      </ion-toolbar>
+    </ion-footer>
+</body>
+</ion-content>

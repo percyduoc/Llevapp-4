@@ -62,6 +62,10 @@ export const routes: Routes = [
     path: 'googlemap',
     loadComponent: () => import('./googlemap/googlemap.page').then( m => m.GooglemapPage)
   },
+  {
+    path: 'apk',
+    loadComponent: () => import('./apk/apk.page').then( m => m.ApkPage)
+  },
 
 
 

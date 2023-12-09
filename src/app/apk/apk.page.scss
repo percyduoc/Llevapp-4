@@ -1,0 +1,153 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px; /* Redondear bordes de la web */
+}
+
+/* Estilos para el título principal */
+h1 {
+    color: #eda406;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-bottom: 1px solid #8833ff; /* Línea separadora con color azul */
+    padding: 10px;
+    border-radius: 10px; /* Redondear bordes del título */
+}
+
+/* Estilos para subtítulos */
+h2 {
+    color: rgb(255, 214, 51);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-bottom: 1px solid #8833ff; /* Línea separadora con color verde */
+    padding: 10px;
+    border-radius: 10px; /* Redondear bordes del título */
+}
+
+/* Estilos para el logotipo en el título */
+h1 img {
+    max-width: 100px;
+    border-radius: 9%; /* Redondear bordes del logo */
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 40px;
+    background-color: #000; /* Color de fondo del pie de página */
+    color: #eda406; /* Color del texto del pie de página */
+    border-radius: 10px; /* Redondear bordes del pie de página */
+}
+
+/* Estilos para los mensajes en PC y dispositivos móviles */
+#pc-message, #mobile-message {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Estilos para el código QR en PC */
+#pc-qr-code {
+    width: 200px;
+    height: 200px;
+    margin-top: 15px;
+    border-radius: 10px; /* Redondear bordes del código QR */
+}
+
+/* Estilos para el botón de descarga en dispositivos móviles */
+#mobile-download-btn {
+    background-color: #0080ff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos al pasar el ratón sobre el botón de descarga en dispositivos móviles */
+#mobile-download-btn:hover {
+    background-color: #005bb6;
+}
+
+/* Estilos específicos para PC utilizando media queries */
+@media only screen and (min-width: 600px) {
+    #pc-message {
+        display: block;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    #pc-qr-code {
+        display: block;
+        margin: 0 auto;
+    }
+
+    #mobile-message {
+        display: none;
+    }
+
+    #mobile-download-btn {
+        display: none;
+    }
+}
+
+/* Estilos específicos para dispositivos móviles utilizando media queries */
+@media only screen and (max-width: 599px) {
+    #mobile-message {
+        display: block;
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    #pc-message {
+        display: none;
+    }
+
+    #pc-qr-code {
+        display: none;
+    }
+
+    #mobile-download-btn {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+/* Estilos para un botón personalizado */
+.myButton {
+    box-shadow: -2px 12px 19px -7px #7a31e1;
+    background:linear-gradient(to bottom, #8833ff 5%, #5c1eb3 100%);
+    background-color:#44c767;
+    border-radius:8px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:20px;
+    font-weight:bold;
+    padding:15px 15px;
+    text-decoration:none;
+    text-shadow:0px 3px 0px #2f6627;
+}
+
+/* Estilos al pasar el ratón sobre el botón personalizado */
+.myButton:hover {
+    background:linear-gradient(to bottom, #8833ff 5%, #5c1eb3 100%);
+    background-color:#8833ff;
+}
+
+/* Estilos al hacer clic en el botón personalizado */
+.myButton:active {
+    position:relative;
+    top:1px;
+}
